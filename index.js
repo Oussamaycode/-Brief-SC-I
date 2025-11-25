@@ -312,3 +312,44 @@ function ajouterunmembre() {
     count++;
 }
 
+confirmmodal.addEventListener("click", () => {
+
+    const inputs = modal.querySelectorAll('input');
+
+    const dates=modal.querySelectorAll('input[type="date"]');
+
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+            alert("Please fill in the details");
+            return;
+        }
+    }
+
+    let emailre = /^[^@\s\.]{3,}@[^@\s\.]{4,}\.[^@\s\.]{2,3}$/
+
+    let namere = /^[a-zA-Z ]{3,20}$/
+
+    if (namere.test(fullnameinput.value.trim()) === false) {
+        alert("nom invalide")
+        return;
+    }
+
+    if (emailre.test(emailinput.value) === false) {
+        alert("email invalide");
+        return;
+    }
+
+    for (let i=0; i<dates.length; i++){
+        if (dates[i]>=dates[i+1])
+        {
+            alert('Please verify dates !');
+            return;
+        }
+    }
+
+    
+    ajouterunmembre();
+    resetModal();
+});
+
