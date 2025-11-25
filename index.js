@@ -147,6 +147,8 @@ imageinput.addEventListener('change', () => {
     }
 });
 
+
+
 function createnewexperience(number) {
     const experience = document.createElement('div');
     experience.classList.add('flex', 'flex-col', 'gap-4', 'p-3', 'experience-block');
@@ -161,3 +163,19 @@ function createnewexperience(number) {
     experience.querySelectorAll('input').forEach(input => input.classList.add('border-2', 'border-gray-300', 'rounded-3xl', 'p-3'));
     return experience;
 }
+
+
+const confirmeclosemodal = document.createElement('div');
+const confirmmodal = addunassignedmember.cloneNode(true);
+confirmmodal.type = 'button';
+const closemodal = confirmmodal.cloneNode(true);
+closemodal.type = 'button';
+closemodal.textContent = "fermer";
+
+let experiencecount = 1;
+const experience = document.createElement('div');
+experience.append(createnewexperience(experiencecount));
+const addexperiencebtn = document.createElement('button');
+addexperiencebtn.textContent = "Add Experience";
+experience.append(addexperiencebtn);
+
