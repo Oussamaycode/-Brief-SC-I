@@ -495,3 +495,98 @@ closesidebar.addEventListener('click', function () {
 })
 
 
+addtoreceptionbutton.addEventListener('click', function () {
+
+    addtoroom(reception);
+
+}
+);
+
+addtoserversbutton.addEventListener('click', function () {
+
+    addtoroom(servers);
+}
+);
+
+addtoarchivesbutton.addEventListener('click', function () {
+
+    addtoroom(archives);
+}
+);
+
+addtosecuritybutton.addEventListener('click', function () {
+    addtoroom(security)
+
+}
+);
+addtoconferencebutton.addEventListener('click', function () {
+
+    addtoroom(conference)
+
+}
+);
+
+addtostaffbutton.addEventListener('click', function () {
+
+    addtoroom(staff);
+
+}
+);
+
+
+const memberinfoconatiner = document.createElement('div');
+document.body.append(memberinfoconatiner);
+
+const memberinfo = document.createElement('div');
+memberinfoconatiner.append(memberinfo);
+
+
+function memberinformation(member) {
+
+    memberinfo.innerHTML =
+        `<div class=" relative flex flex-col items-center gap-4 border-b pb-4">
+        <button id="closeMemberInfo" class="absolute top-2 right-2 text-red-600 font-bold text-xl hover:text-red-800">&times;</button>
+        <img class="rounded-full w-32 h-32 border-4 border-green-600 object-cover" src=${member.imagesrc}>
+        <h1 class="text-2xl font-bold text-gray-800">${member.fullname}</h1>
+        <h2 class="text-gray-500 text-lg">${member.role}</h2>
+    </div>
+
+
+    <div class="flex flex-col gap-3 p-3">
+            <h3 class="font-semibold text-gray-700">Current room: <span class="text-green-600">${member.room || "Unassigned"}</span></h3>
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>${member.email}</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>${member.mobile}</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3 Experiences max-h-60 overflow-y-auto">
+            <h2 class="font-semibold text-gray-700 border-b pb-1">Experiences</h2>
+            </div>
+        </div>`
+
+    member.experiences.forEach(experience => {
+        const exp = document.createElement('div');
+        exp.innerHTML =
+            ` <div class="bg-gray-50 p-3 rounded-xl shadow-inner flex flex-col gap-1 ">
+                        <p class="font-semibold text-gray-700">Company: ${experience.name}</p>
+                        <p class="text-gray-500 text-sm">From: ${experience.start} To: ${experience.end}</p>
+                        <p class="text-gray-600">${experience.description}</p>
+                    </div>
+
+        `
+        memberinfo.querySelector('.Experiences').append(exp);
+        memberinfo.classList.add('bg-white', 'rounded-3xl', 'p-4')
+    })
+
+    const closeBtn = memberinfo.querySelector('#closeMemberInfo');
+    closeBtn.addEventListener('click', () => {
+        memberinfoconatiner.classList.add('hidden');
+    });
+
+
+}
