@@ -28,3 +28,8 @@ const addtosecuritybutton = document.createElement('button');
 const addtostaffbutton = document.createElement('button');
 const addtoserversbutton = document.createElement('button');
 const addtoarchivesbutton = document.createElement('button');
+
+
+const addunassignedmember = document.createElement('button');
+addunassignedmember.innerText = "Add member";
+unassigned.append(addunassignedmember);
