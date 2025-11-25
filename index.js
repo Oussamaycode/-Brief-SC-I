@@ -211,3 +211,32 @@ addunassignedmember.addEventListener("click", function () {
     profileimage.src = "images/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
     modalcontainer.classList.remove('hidden');
 })
+
+
+function template(card, element) {
+
+    card.classList = "flex p-3 gap-4 border-2 border-gray-600 rounded-3xl h-[80%] justify-start items-center member-card ";
+    card.id = `${element.id}`;
+    card.innerHTML = `
+        <img class="rounded-full border-4 border-green-600 h-[80%]" src=${element.imagesrc}>
+        <div class="flex flex-col justify-around ">
+            <p class="font-bold">${element.fullname}</p>
+            <p class="text-gray" >${element.role}</p>
+        </div>
+        <button id="checkbox${element.id}" 
+        class="  hidden select-btn  transition active:scale-95 bg-transparent">
+        <i class="fa-regular fa-square-check fa-xl text-orange-600"></i>
+       </button>
+       <button id="remove${element.id}" 
+        class=" hidden select-btn   transition active:scale-95 bg-transparent">
+        <i class="fa-solid fa-xmark fa-xl text-red-600"></i>
+       </button>`
+    card.addEventListener('click', function (e) {
+        if (e.target.closest('button')) return;
+        memberinfoconatiner.classList.remove('hidden');
+        memberinformation(element);
+
+    })
+
+
+}
