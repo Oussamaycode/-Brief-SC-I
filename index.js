@@ -268,7 +268,47 @@ function render(list) {
 
     }
 
-
     )
+}
+
+function ajouterunmembre() {
+
+
+    const experiences = [];
+
+
+    document.querySelectorAll('.experience-block').forEach(block => {
+        experiences.push({
+            name: block.querySelector('.exp-name').value,
+            start: block.querySelector('.exp-start').value,
+            end: block.querySelector('.exp-end').value,
+            description: block.querySelector('.exp-description').value
+        });
+    })
+
+
+    const memberinfo = {
+        fullname: fullnameinput.value,
+        role: roleinput.value,
+        mobile: mobileinput.value,
+        email: emailinput.value,
+        imagesrc: profileimage.src,
+        id: count + 1,
+        room: "",
+        experiences: experiences,
+    }
+
+    for( let i=0; i<unassignedmembers.length; i++) {
+        if (unassignedmembers[i].name==memberinfo.name && unassignedmembers[i].role==memberinfo.role ){
+        alert('This Member exists already !');
+        return;
+    }
+
+    }
+    
+    unassignedmembers.push(memberinfo)
+    render(unassignedmembers);
+    modalcontainer.classList.add('hidden');
+    count++;
 }
 
