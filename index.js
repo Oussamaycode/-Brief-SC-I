@@ -179,3 +179,20 @@ const addexperiencebtn = document.createElement('button');
 addexperiencebtn.textContent = "Add Experience";
 experience.append(addexperiencebtn);
 
+modal.append(modalheader, fullnamelabel, fullnameinput, rolelabel, roleinput, mobilelabel, mobileinput, emaillabel, emailinput, imagelabel, imageinput, experience, confirmeclosemodal);
+confirmeclosemodal.append(confirmmodal, closemodal);
+
+function resetmodal() {
+    fullnameinput.value = '';
+    roleinput.value = '';
+    mobileinput.value = '';
+    emailinput.value = '';
+    profileimage.src = 'images/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg';
+
+
+    experience.innerHTML = '';
+    experiencecount = 1;
+    experience.append(createnewexperience(experiencecount));
+    experience.append(addexperiencebtn);
+}
+
