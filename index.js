@@ -44,3 +44,31 @@ const roomMembers = {
     servers: [],
 };
 let sidebarOpen = false;
+
+addunassignedmember.classList.add('bg-green-600', 'rounded-3xl', 'text-white', 'p-3', 'w-[35%]', 'self-center', 'border-[3px]', 'border-orange-600');
+
+
+
+reception.append(addtoreceptionbutton, "Reception");
+reception.setAttribute("id", "reception");
+reception.setAttribute("data-max", "3");
+
+conference.append(addtoconferencebutton, 'Conference');
+conference.setAttribute("id", "conference");
+conference.setAttribute("data-max", "3");
+
+security.append(addtosecuritybutton, "Security");
+security.setAttribute("id", "security");
+security.setAttribute("data-max", "3");
+
+staff.append(addtostaffbutton, "Staff");
+staff.setAttribute("id", "staff");
+staff.setAttribute("data-max", "3");
+
+servers.append(addtoserversbutton, "Servers");
+servers.setAttribute("id", "servers");
+servers.setAttribute("data-max", "3");
+
+archives.append(addtoarchivesbutton, "Archives");
+archives.setAttribute("id", "archives");
+archives.setAttribute("data-max", "3");
