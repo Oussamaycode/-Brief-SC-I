@@ -196,3 +196,10 @@ function resetmodal() {
     experience.append(addexperiencebtn);
 }
 
+addexperiencebtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    experiencecount++;
+    const newexperience = createnewexperience(experiencecount);
+    experience.insertBefore(newexperience, addexperiencebtn);
+}
+)
