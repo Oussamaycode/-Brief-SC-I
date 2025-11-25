@@ -382,4 +382,30 @@ function roomtorole(room) {
     }
 }
 
+function shrinkcard(card) {
 
+    card.classList.add('h-[45%]', 'w-auto');
+
+
+    const img = card.querySelector('img');
+    if (img) {
+        img.classList.add('h-[50px]', 'w-[50px]');
+    }
+
+    const buttons = card.querySelectorAll('button');
+    buttons.forEach(btn => btn.classList.add('h-[35px]', 'w-[35px]'));
+}
+
+function restorecard(card) {
+
+    card.classList.remove('h-[45%]', 'w-auto');
+    card.classList.add('p-2');
+
+    const img = card.querySelector('img');
+    if (img) {
+        img.classList.remove('h-[50px]', 'w-[50px]');
+    }
+
+    const buttons = card.querySelectorAll('button');
+    buttons.forEach(btn => btn.classList.remove('h-[35px]', 'w-[35px]'));
+}
