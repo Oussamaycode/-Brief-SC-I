@@ -122,3 +122,42 @@ roles.forEach(role => {
     option.textContent = role;
     roleinput.append(option);
 });
+
+const mobilelabel = document.createElement('label');
+mobilelabel.textContent = "Phone Number"
+const mobileinput = document.createElement('input');
+mobileinput.type = "text";
+mobileinput.placeholder = "+2120123456789";
+
+const emaillabel = document.createElement('label');
+emaillabel.textContent = "Email"
+const emailinput = document.createElement('input');
+emailinput.type = "email";
+emailinput.placeholder = "oussama@gmail.com";
+
+
+const imagelabel = document.createElement('label');
+imagelabel.textContent = "Profile picture"
+const imageinput = document.createElement('input');
+imageinput.type = "file";
+imageinput.addEventListener('change', () => {
+    const file = imageinput.files[0];
+    if (file) {
+        profileimage.src = URL.createObjectURL(file);
+    }
+});
+
+function createnewexperience(number) {
+    const experience = document.createElement('div');
+    experience.classList.add('flex', 'flex-col', 'gap-4', 'p-3', 'experience-block');
+
+    experience.innerHTML = `
+        <h2>Experience ${number}</h2>
+        <input type="text" class="exp-name" placeholder="Nom de l'entreprise">
+        <input type="date" class="exp-start" >
+        <input type="date" class="exp-end" >
+        <input type="text" class="exp-description" placeholder="Description">
+    `;
+    experience.querySelectorAll('input').forEach(input => input.classList.add('border-2', 'border-gray-300', 'rounded-3xl', 'p-3'));
+    return experience;
+}
