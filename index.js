@@ -203,3 +203,11 @@ addexperiencebtn.addEventListener('click', function (e) {
     experience.insertBefore(newexperience, addexperiencebtn);
 }
 )
+
+let count = 0;
+const unassignedmembers = [];
+
+addunassignedmember.addEventListener("click", function () {
+    profileimage.src = "images/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+    modalcontainer.classList.remove('hidden');
+})
