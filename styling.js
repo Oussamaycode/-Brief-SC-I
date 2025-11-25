@@ -34,7 +34,7 @@ experience.classList.add('flex', 'flex-col', 'gap-4', 'p-3','border-2','border-g
 
 addexperiencebtn.classList.add('rounded-3xl', 'bg-green-600', 'text-white', 'font-bold', 'text-center', 'p-3', 'self-center', 'w-[80%]');
 
-modal.querySelectorAll('input').forEach(input => input.classList.add('border-2','border-gray-300','rounded-3xl','p-3'))
+modal.querySelectorAll('input').forEach(input => input.classList.add('border-2','border-gray-300','rounded-3xl','p-3','bg-white'))
 
 modal.querySelector('select').classList.add('border-2','border-gray-300','rounded-3xl','p-3')
 

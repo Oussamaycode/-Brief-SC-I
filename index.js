@@ -340,8 +340,8 @@ confirmmodal.addEventListener("click", () => {
         return;
     }
 
-    for (let i=0; i<dates.length; i++){
-        if (dates[i]>=dates[i+1])
+    for (let i=0; i<dates.length-1; i++){
+        if (dates[i].value>=dates[i+1].value)
         {
             alert('Please verify dates !');
             return;
