@@ -72,3 +72,13 @@ servers.setAttribute("data-max", "3");
 archives.append(addtoarchivesbutton, "Archives");
 archives.setAttribute("id", "archives");
 archives.setAttribute("data-max", "3");
+
+
+unassignedheading.innerText = "Unassigned Members";
+unassigned.append(unassignedheading, unassignedmemberslist);
+unassigned.append(addunassignedmember);
+main.append(unassigned, rooms);
+rooms.append(roomscontainer);
+roomscontainer.append(roomscontainerleft, roomscontainerright);
+roomscontainerright.append(reception, conference, security);
+roomscontainerleft.append(staff, servers, archives);
