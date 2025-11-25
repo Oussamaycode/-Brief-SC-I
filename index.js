@@ -33,3 +33,14 @@ const addtoarchivesbutton = document.createElement('button');
 const addunassignedmember = document.createElement('button');
 addunassignedmember.innerText = "Add member";
 unassigned.append(addunassignedmember);
+
+
+const roomMembers = {
+    reception: [],
+    conference: [],
+    security: [],
+    staff: [],
+    archives: [],
+    servers: [],
+};
+let sidebarOpen = false;
