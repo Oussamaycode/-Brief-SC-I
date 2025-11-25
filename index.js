@@ -253,3 +253,22 @@ function roombackground(room) {
     }
 }
 
+[reception, security, archives, servers, staff].forEach(roombackground);
+
+
+function render(list) {
+    unassignedmemberslist.innerHTML = '';
+
+    list.forEach(element => {
+        const card = document.createElement('div');
+        template(card, element);
+        if (element.room == "")
+            unassignedmemberslist.append(card);
+
+
+    }
+
+
+    )
+}
+
