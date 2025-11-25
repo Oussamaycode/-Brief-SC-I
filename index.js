@@ -353,3 +353,33 @@ confirmmodal.addEventListener("click", () => {
     resetModal();
 });
 
+closemodal.addEventListener("click", function () {
+    modalcontainer.classList.add('hidden');
+})
+
+closemodal.classList.add('bg-red-600');
+const closesidebar = closemodal.cloneNode(true);
+
+
+function roomtorole(room) {
+    if (room == reception) {
+        return (["Reception", "Nettoyage"])
+    }
+    if (room == security) {
+        return (["Security", "Nettoyage"])
+    }
+    if (room == conference) {
+        return (["Reception", "Security", "Mananger", "Nettoyage", "Technicien IT"])
+    }
+    if (room == servers) {
+        return (["Technicien IT", "Nettoyage"])
+    }
+    if (room == archives) {
+        return (["Reception", "Security", "Manager", "Technicien IT"])
+    }
+    if (room == staff) {
+        return (["Reception", "Security", "Manager", "Nettoyage", "Technicien IT"])
+    }
+}
+
+
