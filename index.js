@@ -10,3 +10,11 @@ const rooms = document.createElement('section');
 const roomscontainer = document.createElement('div');
 const roomscontainerleft = document.createElement('div');
 const roomscontainerright = document.createElement('div');
+
+
+const reception = document.createElement('div');
+const conference = document.createElement('div');
+const security = document.createElement('div');
+const staff = document.createElement('div');
+const servers = document.createElement('div');
+const archives = document.createElement('div');
