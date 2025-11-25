@@ -97,3 +97,8 @@ const modaltitle = document.createElement('h1');
 modaltitle.innerText = "Ajouter un Nouveau Membre"
 const profileimage = document.createElement('img');
 modalheader.append(modaltitle, profileimage);
+
+
+const modal = document.createElement('form');
+document.body.append(modalcontainer);
+modalcontainer.append(modal);
