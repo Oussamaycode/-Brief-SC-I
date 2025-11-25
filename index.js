@@ -82,3 +82,18 @@ rooms.append(roomscontainer);
 roomscontainer.append(roomscontainerleft, roomscontainerright);
 roomscontainerright.append(reception, conference, security);
 roomscontainerleft.append(staff, servers, archives);
+
+
+const addtoroombuttons = roomscontainer.querySelectorAll('button');
+addtoroombuttons.forEach(element => {
+    element.innerHTML = `<i class="fa-solid fa-plus fa-green text-green-500"></i>`;
+    element.classList.add('border-[3px]', 'rounded-full', 'border-green-600', 'bg-orange-200', 'hover:bg-orange-300', 'h-6', 'flex', 'justify-center', 'items-center', 'absolute', 'top-2', 'right-2');
+});
+
+
+const modalcontainer = document.createElement('div');
+const modalheader = document.createElement('div');
+const modaltitle = document.createElement('h1');
+modaltitle.innerText = "Ajouter un Nouveau Membre"
+const profileimage = document.createElement('img');
+modalheader.append(modaltitle, profileimage);
