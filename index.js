@@ -411,6 +411,9 @@ function restorecard(card) {
 }
 
 
+let checkboxes = [];
+let removebuttons = [];
+
 
 function addtoroom(room) {
 
@@ -459,11 +462,11 @@ function addtoroom(room) {
             remove.classList.remove('hidden');
 
             member.room = room.id;
-            shrinkCard(card);
+            shrinkcard(card);
             room.appendChild(card);
             roombackground(room);
             remove.addEventListener('click', function () {
-                restoreCard(card);
+                restorecard(card);
                 unassignedmemberslist.append(card);
                 remove.classList.add('hidden');
                 if (sidebarOpen) {
@@ -480,3 +483,15 @@ function addtoroom(room) {
 
 
 }
+
+
+closesidebar.addEventListener('click', function () {
+    unassignedheading.classList.remove('hidden');
+    addunassignedmember.classList.remove('hidden');
+    unassigned.removeChild(closesidebar);
+    checkboxes.forEach(b => b.classList.add('hidden'));
+    render(unassignedmembers);
+    sidebarOpen = false;
+})
+
+
