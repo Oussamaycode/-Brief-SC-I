@@ -240,3 +240,16 @@ function template(card, element) {
 
 
 }
+
+function roombackground(room) {
+    const membersInside = room.querySelectorAll('.member-card').length;
+
+    if (membersInside === 0) {
+        room.classList.remove('bg-white');
+        room.classList.add('bg-red-200');
+    } else {
+        room.classList.remove('bg-red-200');
+        room.classList.add('bg-white');
+    }
+}
+
