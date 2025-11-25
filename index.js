@@ -409,3 +409,74 @@ function restorecard(card) {
     const buttons = card.querySelectorAll('button');
     buttons.forEach(btn => btn.classList.remove('h-[35px]', 'w-[35px]'));
 }
+
+
+
+function addtoroom(room) {
+
+    const max = Number(room.getAttribute("data-max"))
+
+
+    const rolesallowed = roomtorole(room);
+
+    unassignedheading.classList.add('hidden');
+    unassigned.append(closesidebar);
+    addunassignedmember.classList.add('hidden');
+    const members = unassignedmembers.filter(element => rolesallowed.includes(element.role) && element.room === "");
+
+    render(members);
+
+    sidebarOpen = true;
+
+    members.forEach(member => {
+        const checkbox = document.getElementById(`checkbox${member.id}`);
+        checkboxes.push(checkbox);
+        const remove = document.getElementById(`remove${member.id}`);
+        checkbox.classList.remove('hidden');
+        const card = checkbox.parentNode;
+
+        checkbox.addEventListener('click', function () {
+            if (room.querySelectorAll('.member-card').length >= max) {
+                alert("room can only contain " + max);
+                return;
+            }
+
+            if (member.room !== "") {
+                console.log(" Member already assigned to a room");
+                return;
+            }
+
+            if (roomMembers[room.id].includes(member)) {
+                console.log(" Already in this room array");
+                return;
+            }
+
+
+            checkbox.classList.add('hidden');
+
+            roomMembers[room.id].push(member);
+
+            remove.classList.remove('hidden');
+
+            member.room = room.id;
+            shrinkCard(card);
+            room.appendChild(card);
+            roombackground(room);
+            remove.addEventListener('click', function () {
+                restoreCard(card);
+                unassignedmemberslist.append(card);
+                remove.classList.add('hidden');
+                if (sidebarOpen) {
+                    checkbox.classList.remove('hidden');
+                }
+                member.room = "";
+                roombackground(room);
+            })
+        });
+
+    });
+
+    return (members);
+
+
+}
