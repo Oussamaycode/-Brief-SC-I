@@ -102,3 +102,23 @@ modalheader.append(modaltitle, profileimage);
 const modal = document.createElement('form');
 document.body.append(modalcontainer);
 modalcontainer.append(modal);
+
+
+const fullnamelabel = document.createElement('label');
+fullnamelabel.textContent = "Full Name";
+const fullnameinput = document.createElement('input');
+fullnameinput.setAttribute("id", "name")
+fullnameinput.type = "text";
+fullnameinput.placeholder = "Full Name";
+
+const rolelabel = document.createElement('label');
+rolelabel.textContent = "Role";
+const roleinput = document.createElement('select');
+
+const roles = ["Reception", "Security", "Manager", "Nettoyage", "Technicien IT"];
+roles.forEach(role => {
+    const option = document.createElement("option");
+    option.value = role;
+    option.textContent = role;
+    roleinput.append(option);
+});
