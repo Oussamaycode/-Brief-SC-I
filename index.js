@@ -18,3 +18,13 @@ const security = document.createElement('div');
 const staff = document.createElement('div');
 const servers = document.createElement('div');
 const archives = document.createElement('div');
+
+
+
+const unassignedmemberslist = document.createElement('div');
+const addtoreceptionbutton = document.createElement('button');
+const addtoconferencebutton = document.createElement('button');
+const addtosecuritybutton = document.createElement('button');
+const addtostaffbutton = document.createElement('button');
+const addtoserversbutton = document.createElement('button');
+const addtoarchivesbutton = document.createElement('button');
