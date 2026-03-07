@@ -341,7 +341,7 @@ confirmmodal.addEventListener("click", () => {
     }
 
     for (let i=0; i<dates.length-1; i++){
-        if (dates[i].value>=dates[i+1].value)
+        if (dates[i].value>=dates[i+2].value)
         {
             alert('Please verify dates !');
             return;
@@ -350,7 +350,7 @@ confirmmodal.addEventListener("click", () => {
 
     
     ajouterunmembre();
-    resetModal();
+    resetmodal();
 });
 
 closemodal.addEventListener("click", function () {
@@ -590,3 +590,5 @@ function memberinformation(member) {
 
 
 }
+
+
